@@ -1,0 +1,2 @@
+# our common library with relevant extras
+git+http://StashRO:BaRu3Res@git.bvops.net/scm/COM/kasasa-common-python.git#egg=kasasa_common[db,vault]

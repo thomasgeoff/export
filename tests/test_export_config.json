@@ -1,0 +1,66 @@
+{
+    "fico_sourced_prospects": [
+        {
+            "Cluster": "map_stack",
+            "Database": "fi_{fi_id}",
+            "Export_Name": "prospects_data",
+            "Vendor": "fico",
+            "Query": "prospects_data.sql",
+            "Bucket": "fi-data-archive-sandbox-us-west-2",
+            "Prefix": "reservoir/{export_name}/{fi_id}/vendor_{vendor}/{date}"
+        }
+    ],
+    "fico_sourced_customers": [
+        {
+            "Cluster": "map_stack",
+            "Database": "fi_{fi_id}",
+            "Export_Name": "vendor_sourced_customer_data",
+            "Vendor": "fico",
+            "Query": "vendor_sourced_customer_data.sql",
+            "Bucket": "fi-data-archive-sandbox-us-west-2",
+            "Prefix": "reservoir/{export_name}/{fi_id}/vendor_{vendor}/{date}"
+        },
+        {
+            "Cluster": "map_stack",
+            "Database": "fi_{fi_id}",
+            "Export_Name": "prospects_customer_mapping",
+            "Vendor": "fico",
+            "Query": "prospects_customer_mapping.sql",
+            "Bucket": "fi-data-archive-sandbox-us-west-2",
+            "Prefix": "reservoir/{export_name}/{fi_id}/vendor_{vendor}/{date}"
+        }
+    ],
+    "mailing_list": [
+        {
+            "Cluster": "map_stack",
+            "Database": "map_campaign",
+            "Export_Name": "mailing_list",
+            "Vendor": "livetech",
+            "Query": "mailing_list.sql",
+            "Bucket": "fi-data-archive-sandbox-us-west-2",
+            "Prefix": "reservoir/{export_name}/{fi_id}/vendor_{vendor}/{date}"
+        }
+    ],
+    "customers": [
+        {
+            "Cluster": "map_stack",
+            "Database": "map_campaign",
+            "Export_Name": "customers",
+            "Vendor": "livetech",
+            "Query": "customers.sql",
+            "Bucket": "fi-data-archive-sandbox-us-west-2",
+            "Prefix": "reservoir/{export_name}/{fi_id}/vendor_{vendor}/{date}"
+        }
+    ],
+    "feature_signup": [
+        {
+            "Cluster": "map_stack",
+            "Database": "map_config",
+            "Export_Name": "feature_signup",
+            "Vendor": "kasasa",
+            "Query": "feature_signup.sql",
+            "Bucket": "map-data-sandbox-us-west-2",
+            "Prefix": "files_to_lower_env/{date}"
+        }
+    ]
+}

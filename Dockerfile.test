@@ -1,0 +1,14 @@
+FROM python:3.7
+
+WORKDIR /app
+
+COPY ./requirements.txt .
+COPY ./test-requirements.txt .
+RUN pip3 install --upgrade pip \
+    && pip3 install -r test-requirements.txt
+
+RUN git clone --single-branch -b master http://StashRO:BaRu3Res@git.bvops.net/scm/map/map-data-pipeline-flyway.git
+RUN curl -o flyway.tar.gz https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/4.0.3/flyway-commandline-4.0.3-linux-x64.tar.gz
+RUN tar -C . -xpzf flyway.tar.gz
+
+COPY . .
